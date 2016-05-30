@@ -1,0 +1,3 @@
+---
+repo: https://github.com/Yaowenjie/static_page.git
+dest: /var/www/html/static_page

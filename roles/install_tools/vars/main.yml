@@ -1,0 +1,4 @@
+---
+packages:
+  - { name: 'Git', value: git }
+  - { name: 'Apache2', value: apache2 }
