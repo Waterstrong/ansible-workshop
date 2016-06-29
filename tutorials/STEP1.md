@@ -1,28 +1,99 @@
-## Step 1. Set up the environment
+## Step 1. Set up the environment 
 
-### Install Ansible on Mac OSX
+### Install Ansible on Mac OS X
 
 #### Brew Install
 
+可以采用[Homebrew](http://brew.sh/)进行安装：
 ```
-brew install ansible
+brew install ansible # 安装Ansible
 
-ansible --version
+brew install --upgrade ansible # 以后可更新版本
 ```
 
-#### Python Install
+#### Pip Install
 
+还可采用Python的[pip](https://pip.pypa.io/en/stable/installing/)包管理工具安装：
+```
+sudo pip install ansible # 安装Ansible
+
+sudo pip install --upgrade ansible # 以后可更新版本
+```
 
 ### Install VirtualBox if not have one
 
+在[VirtualBox官网下载](https://www.virtualbox.org/wiki/Downloads)安装包进行安装。
+
 ### Install Vagrant if not have one
 
-### Vagrant up base on existing `Vagrantfile`
+在[Vagrant官网下载](https://www.vagrantup.com/downloads.html)安装包进行安装。
 
+### Vagrant up base on existing `Vagrantfile`
 ```
-cd vagrant
+git clone https://github.com/Waterstrong/ansible-workshop.git
+cd ansible-workshop/vagrant
 vagrant up
 ```
 
-# test ansible connection
-`ansible -i inventory all -m ping`
+验证登录虚拟机成功后退出:
+```
+vagrant ssh
+exit
+```
+
+### Test Ansible Connection
+```
+cd ..
+ansible -i inventory all -m ping
+```
+
+#### Unreachable Solution
+如果连接不成功返回:
+```
+192.168.33.10 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh.",
+    "unreachable": true
+}
+```
+
+可能原因是之前已经在`~/.ssh/known_hosts`中有相同的记录，可以通过ssh命令确认:
+```
+ssh -i vagrant/.vagrant/machines/default/virtualbox/private_key vagrant@192.168.33.10
+```
+
+如果确实报错，则可修改known_hosts文件，找到该记录并删除之:
+```
+sudo vim ~/.ssh/known_hosts # 找到192.168.33.10记录并删除行后保存
+ansible -i inventory all -m ping
+
+```
+
+若连接成功返回:
+```
+192.168.33.10 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+```
+
+### The End
+环境搭建安装完成，准备工作结束，关闭虚拟机
+```
+cd vagrant
+vagrant halt
+```
+
+----
+参考资料
+
+1. [Ansible官网](http://docs.ansible.com/ansible/intro.html)
+2. [http://brew.sh/](http://brew.sh/)
+3. [https://valdhaus.co/writings/ansible-mac-osx/](https://valdhaus.co/writings/ansible-mac-osx/)
+4. [https://pip.pypa.io/en/stable/installing/](https://pip.pypa.io/en/stable/installing/)
+5. [https://atlas.hashicorp.com/ubuntu/boxes/trusty64](https://atlas.hashicorp.com/ubuntu/boxes/trusty64)
+6. [https://www.vagrantup.com/docs/getting-started/up.html](https://www.vagrantup.com/docs/getting-started/up.html)
+7. [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
+8. [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+9. [https://www.vagrantup.com/docs/networking/private_network.html](https://www.vagrantup.com/docs/networking/private_network.html)
+
