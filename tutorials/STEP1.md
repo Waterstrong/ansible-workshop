@@ -47,6 +47,14 @@ cd ..
 ansible -i inventory all -m ping
 ```
 
+若连接成功返回:
+```
+192.168.33.10 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+```
+
 #### Unreachable Solution
 如果连接不成功返回:
 ```
@@ -62,23 +70,35 @@ ansible -i inventory all -m ping
 ssh -i vagrant/.vagrant/machines/default/virtualbox/private_key vagrant@192.168.33.10
 ```
 
-如果确实报错，则可修改known_hosts文件，找到该记录并删除之:
+如果确实报错:
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:JIdGdnPGRJcOZd1ZMiisaPesCr3I0/o00agtrOGNYYA.
+Please contact your system administrator.
+Add correct host key in /Users/sqlin/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /Users/sqlin/.ssh/known_hosts:50
+ECDSA host key for 192.168.33.10 has changed and you have requested strict checking.
+Host key verification failed.
+```
+
+可通过执行以下命令解决:
+```
+ssh-keygen -R 192.168.33.10
+```
+
+或者可直接修改known_hosts文件，找到该记录并删除:
 ```
 sudo vim ~/.ssh/known_hosts # 找到192.168.33.10记录并删除行后保存
-ansible -i inventory all -m ping
-
-```
-
-若连接成功返回:
-```
-192.168.33.10 | SUCCESS => {
-    "changed": false,
-    "ping": "pong"
-}
 ```
 
 ### The End
-环境搭建安装完成，准备工作结束，关闭虚拟机
+环境搭建完成，准备工作结束，关闭虚拟机:
 ```
 cd vagrant
 vagrant halt
