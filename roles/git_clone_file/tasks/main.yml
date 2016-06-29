@@ -1,6 +1,0 @@
----
-- name: Ensure repo clone and update to apache directory
-  git:
-    repo: "{{repo}}"
-    dest: "{{dest}}"
-    update: yes
