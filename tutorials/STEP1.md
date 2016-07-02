@@ -37,6 +37,7 @@ brew install vagrant
 ### Vagrant up base on existing `Vagrantfile`
 ```
 git clone https://github.com/Waterstrong/ansible-workshop.git
+git checkout step1
 cd ansible-workshop/vagrant
 vagrant up
 ```
