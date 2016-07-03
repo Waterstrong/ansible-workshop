@@ -5,4 +5,5 @@
 
   roles:
     - install_tools
-
+    - git_clone_file
+    - start_apache2

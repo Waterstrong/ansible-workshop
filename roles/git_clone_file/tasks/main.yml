@@ -1,0 +1,6 @@
+---
+- name: Ensure repo clone and update to apache directory
+  git:
+    repo: "https://github.com/Waterstrong/waterstrong.github.com.git" 
+    dest: "/var/www/html/home"
+    update: yes
