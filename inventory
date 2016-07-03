@@ -3,3 +3,7 @@
 
 [ubuntu2]
 192.168.33.101 ansible_ssh_user=vagrant ansible_ssh_private_key_file=vagrant2/.vagrant/machines/default/virtualbox/private_key
+
+[myserver:children]
+ubuntu
+ubuntu2
