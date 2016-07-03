@@ -1,6 +1,6 @@
 ## Step 3. Playbooks, Roles and Tasks Practice
 
-### 创建playbooks
+#### 创建playbooks
 写一个Playbook,命名为`setup_server.yml`：
 ```
 ---
@@ -12,7 +12,7 @@
     - install_tools
 ```
 
-### 创建roles和tasks
+#### 创建roles和tasks
 在ansible-workshop目录下创建文件`roles/install_tools/tasks/main.yml`
 ```
 ---
@@ -47,8 +47,8 @@ packages:
 └── setup_server.yml
 ```
 
-### 运行playbooks安装Git
-运行Playbooks:
+#### 运行playbooks安装Git
+运行Playbooks命令如下:
 ```
 ansible-playbook -i inventory setup_server.yml
 ```

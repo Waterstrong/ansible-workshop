@@ -1,7 +1,7 @@
 ## Step 2. Inventory Practice
 当前工作目录为`ansible-workshop`，演示使用Inventory文件来指定受控资源列表。
 
-### 配置虚拟机Host2
+#### 配置虚拟机Host2
 现在可以再加入一台虚拟机，随后会在inventory中进行配置
 ```
 mkdir vagrant2
@@ -25,7 +25,7 @@ vagrant up
 cd ..
 ```
 
-### 更新Inventory加入新Host2
+#### 更新Inventory加入新Host2
 配置inventory加入刚配置的虚拟机：
 ```
 [ubuntu]
@@ -39,7 +39,7 @@ ubuntu
 ubunt2
 ```
 
-### 测试是否ping得通
+#### 测试是否ping得通
 测试一下应该两台都可以正常访问：
 ```
 ansible -i inventory myserver -m ping
