@@ -45,7 +45,7 @@ ubunt2
 ansible -i inventory myserver -m ping
 ```
 
-可能需要输入yes确认加入key fingerprint，最后连接成功结果为：
+可能需要多次输入`yes`回车确认加入key fingerprint，最后连接成功结果为：
 ```
 192.168.33.100 | SUCCESS => {
         "changed": false,

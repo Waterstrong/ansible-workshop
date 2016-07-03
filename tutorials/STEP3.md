@@ -17,7 +17,7 @@
 ```
 ---
 - name: Ensure update cache
-  run_once: yes
+  run_once: no
   apt:
     update_cache: yes
 - name: Ensure serveral components installed
