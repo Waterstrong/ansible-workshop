@@ -65,4 +65,6 @@ ansible-playbook -i inventory setup_server.yml
 ----
 References
 
-*[配置和重启apache服务器](https://yaowenjie.gitbooks.io/ansible-workshop/content/pei_zhi_he_zhong_qi_apache_fu_wu_qi.html)
+* [Ansible Playbooks](http://docs.ansible.com/ansible/playbooks_intro.html)
+* [配置和重启apache服务器](https://yaowenjie.gitbooks.io/ansible-workshop/content/pei_zhi_he_zhong_qi_apache_fu_wu_qi.html)
+
