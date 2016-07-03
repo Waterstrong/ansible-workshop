@@ -15,8 +15,8 @@ packages:
 ---
 - name: Ensure repo clone and update to apache directory
   git:
-    repo: "https://github.com/Waterstrong/waterstrong.github.com.git" 
-    dest: "/var/www/html/home"
+    repo: "git clone -b page https://github.com/Waterstrong/ansible-workshop.git" 
+    dest: "/var/www/html/page"
     update: yes
 ```
 
