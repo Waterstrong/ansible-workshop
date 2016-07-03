@@ -1,0 +1,8 @@
+---
+- hosts: myserver
+  become_method: sudo
+  become: yes
+
+  roles:
+    - install_tools
+
