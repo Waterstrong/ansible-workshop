@@ -1,0 +1,6 @@
+---
+- hosts: ubuntu
+  become_method: sudo
+  become: yes
+  roles:
+    - /usr/local/etc/ansible/roles/geerlingguy.jenkins
