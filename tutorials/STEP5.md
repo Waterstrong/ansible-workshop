@@ -42,6 +42,7 @@ ansible-playbook -i inventory setup_jenkins.yml
 
 可能会花较长的时间，请耐心等待。安装成功后可以访问Jenkins Home页面[http://192.168.33.100:8080](http://192.168.33.100:8080)或Jenkins CLI页面[http://192.168.33.100:8080/cli](http://192.168.33.100:8080/cli)，然后可以开始使用Jenkins了。
 用户名: `admin`   密码: `admin`
+
 ![](jenkins.png)
 
 #### Workshop结束语
