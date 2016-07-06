@@ -74,6 +74,10 @@ PLAY RECAP *********************************************************************
 ```
 
 ----
+> * Goto Prev [Step 2](STEP2.md).
+> * Goto Next [Step 4](STEP4.md).
+
+----
 References
 
 * [Ansible Playbooks](http://docs.ansible.com/ansible/playbooks_intro.html)

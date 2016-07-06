@@ -63,6 +63,10 @@ ansible -i hosts ubuntu2 -m ping
 ```
 
 ----
+> * Goto Prev [Step 1](STEP1.md).
+> * Goto Next [Step 3](STEP3.md).
+
+----
 References
 
 * [Ansible Inventory](http://docs.ansible.com/ansible/intro_inventory.html)

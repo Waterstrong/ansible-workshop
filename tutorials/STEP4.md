@@ -66,6 +66,10 @@ ansible-playbook -i inventory setup_server.yml
 ![](page-demo.png)
 
 ----
+> * Goto Prev [Step 3](STEP3.md).
+> * Goto Next [Step 5](STEP5.md).
+
+----
 References
 
 * [Ansible Playbooks](http://docs.ansible.com/ansible/playbooks_intro.html)
