@@ -37,7 +37,7 @@ packages:
 当前目录结构如下：
 ```
 .
-├── inventory
+├── hosts
 ├── roles
 │   └── install_tools
 │       ├── tasks
@@ -50,7 +50,7 @@ packages:
 #### 运行playbooks安装Git
 运行Playbooks命令如下:
 ```
-ansible-playbook -i inventory setup_server.yml
+ansible-playbook -i hosts setup_server.yml
 ```
 
 最后执行完成显示：

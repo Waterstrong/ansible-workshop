@@ -25,8 +25,8 @@ vagrant up
 cd ..
 ```
 
-#### 更新Inventory加入新Host2
-配置inventory加入刚配置的虚拟机：
+#### 配置Inventory加入新Host2
+创建名为'hosts'的文件，配置虚拟机的Host和Group：
 ```
 [ubuntu]
 192.168.33.100 ansible_ssh_user=vagrant ansible_ssh_private_key_file=vagrant/.vagrant/machines/default/virtualbox/private_key
@@ -42,10 +42,10 @@ ubunt2
 #### 测试是否ping得通
 测试一下应该两台都可以正常访问：
 ```
-ansible -i inventory myserver -m ping
+ansible -i hosts myserver -m ping
 ```
 
-可能需要多次输入`yes`回车确认加入key fingerprint，最后连接成功结果为：
+可能需要多次输入`yes`回车确认加入key fingerprint，当然也可在ansible.cfg中配置参数关闭提示。当连接成功结果为：
 ```
 192.168.33.100 | SUCCESS => {
         "changed": false,
@@ -59,7 +59,7 @@ ansible -i inventory myserver -m ping
 
 也可以单独ping某台虚拟机：
 ```
-ansible -i inventory ubuntu2 -m ping
+ansible -i hosts ubuntu2 -m ping
 ```
 
 ----
