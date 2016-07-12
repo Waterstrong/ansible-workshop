@@ -26,7 +26,7 @@ cd ..
 ```
 
 #### 配置Inventory加入新Host2
-创建名为'hosts'的文件，配置虚拟机的Host和Group：
+创建名为`hosts`的文件，配置虚拟机的Host和Group：
 ```
 [ubuntu]
 192.168.33.100 ansible_ssh_user=vagrant ansible_ssh_private_key_file=vagrant/.vagrant/machines/default/virtualbox/private_key

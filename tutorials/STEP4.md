@@ -39,7 +39,7 @@ packages:
 当前目录树结构为：
 ```
 .
-├── inventory
+├── hosts
 ├── roles
 │   ├── git_clone_file
 │   │   └── tasks
@@ -58,7 +58,7 @@ packages:
 #### 运行playbook并测试服务器
 在目录`ansible-workshop`目录下运行命令测试：
 ```
-ansible-playbook -i inventory setup_server.yml
+ansible-playbook -i hosts setup_server.yml
 ```
 
 成功执行完成后可访问[http://192.168.33.100/page](http://192.168.33.100/page)和[http://192.168.33.101/page](http://192.168.33.101/page)测试是否部署页面成功。
